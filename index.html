@@ -3,57 +3,66 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#090a0e">
 <title>OLIVER | THE EMPIRE</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at top,#242018,#090a0e 65%);color:#fff;font-family:Arial,sans-serif;text-align:center;min-height:100vh}
-header{padding:25px 12px 12px}
-.crown{font-size:35px;color:#e8c879}
-h1{margin:8px 0;color:#e8c879;letter-spacing:5px;font-size:29px}
+body{margin:0;background:radial-gradient(ellipse at top,#292117,#090a0e 65%);color:#fff;font-family:Arial;text-align:center;overflow-x:hidden}
+header{padding:25px 10px 12px}
+h1{color:#e8c879;letter-spacing:6px;font-size:29px;margin:8px}
 .sub{font-size:10px;letter-spacing:5px;color:#aaa}
-.panel{max-width:440px;margin:12px auto;padding:18px}
-.balance{font-size:38px;font-weight:bold;color:#f3d58c;margin:18px 0 5px;text-shadow:0 0 20px #d5a84c66}
-.label{font-size:11px;letter-spacing:3px;color:#999}
-.coin{width:180px;height:180px;border-radius:50%;border:4px solid #d8b66e;background:radial-gradient(circle at 35% 30%,#69532a,#211b10 60%,#080808);color:#f8d88b;font-size:76px;box-shadow:0 0 25px #c59b4b55,inset 0 0 25px #d5ae5a55;cursor:pointer;transition:.12s;touch-action:manipulation}
-.coin:active{transform:scale(.91);box-shadow:0 0 45px #f0cb72}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:24px 0}
-.stat{background:#171820;border:1px solid #4b402b;border-radius:12px;padding:13px 4px}
-.stat span{font-size:10px;color:#aaa;letter-spacing:1px}
-.stat b{display:block;margin-top:8px;color:#f0d28b;font-size:20px}
-.section-title{color:#e8c879;letter-spacing:3px;font-size:14px;margin:25px 0 12px}
-.item{display:flex;align-items:center;justify-content:space-between;text-align:left;background:linear-gradient(120deg,#191a22,#111117);border:1px solid #443a2a;border-radius:12px;padding:14px;margin:10px 0;gap:8px}
-.item strong{color:#f0d28b;font-size:14px}
-.item small{display:block;color:#999;margin-top:6px;font-size:11px}
-button{font-family:inherit}
-.buy,.action{background:linear-gradient(135deg,#f0d18a,#a77a32);color:#15100a;border:0;border-radius:8px;padding:11px 13px;font-weight:bold;cursor:pointer}
-button:disabled{opacity:.35;cursor:not-allowed}
-.controls{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:17px 0}
-.action{background:#22232b;color:#e9ca88;border:1px solid #695632}
-.action.active{background:#d4ad61;color:#17110a}
-.footer{font-size:10px;color:#777;margin:25px 0 12px}
-#notice{color:#e6c77e;font-size:12px;min-height:18px}
-.progress{height:7px;background:#292831;border-radius:10px;overflow:hidden;margin-top:9px}
+.panel{max-width:450px;margin:auto;padding:15px}
+.label{font-size:11px;letter-spacing:3px;color:#aaa}
+.balance{font-size:40px;color:#f3d58c;font-weight:bold;margin:13px;text-shadow:0 0 22px #e5b94a66}
+.coin-area{position:relative;display:inline-block;margin:23px 0}
+.coin{width:185px;height:185px;border-radius:50%;border:4px solid #e4c27c;background:radial-gradient(circle at 35% 25%,#81632e,#302313 65%,#080808);color:#ffe3a0;font-size:78px;box-shadow:0 0 35px #d6a94b66,inset 0 0 30px #e4c27c66;cursor:pointer;touch-action:manipulation;transition:transform .08s}
+.coin:active{transform:scale(.88)}
+.coin.hit{animation:hit .18s}
+@keyframes hit{50%{transform:scale(1.08)}}
+.float{position:absolute;pointer-events:none;font-size:21px;font-weight:bold;color:#ffe49b;animation:float 850ms ease-out forwards;text-shadow:0 2px 10px #000}
+@keyframes float{to{transform:translateY(-100px) scale(1.3);opacity:0}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}
+.stat{background:#191a22;border:1px solid #59472a;border-radius:12px;padding:13px 3px}
+.stat span{font-size:10px;color:#aaa}
+.stat b{display:block;margin-top:8px;color:#f1d18c;font-size:20px}
+.combo{color:#ffdb85;font-size:13px;min-height:20px;margin:8px}
+.section{color:#e8c879;letter-spacing:3px;font-size:14px;margin:25px 0 13px}
+.selector{display:flex;justify-content:center;gap:7px;margin:14px}
+.action,.buy{border:1px solid #695632;border-radius:8px;padding:10px 13px;font-weight:bold;cursor:pointer}
+.action{background:#22232b;color:#e8c879}
+.action.active,.buy{background:linear-gradient(135deg,#f0d18a,#a77a32);color:#17110a}
+.item{background:linear-gradient(120deg,#1d1c21,#111117);border:1px solid #55452d;border-radius:14px;padding:14px;margin:11px 0;text-align:left}
+.itemtop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.itemname{font-weight:bold;color:#f2d48f;font-size:14px}
+.itemdesc{color:#999;font-size:11px;margin-top:6px}
+.iteminfo{font-size:11px;color:#d5b76d;margin-top:10px}
+.buyrow{display:flex;gap:7px;margin-top:12px}
+.buy{flex:1;padding:12px 5px;font-size:12px}
+.buy:disabled{opacity:.3}
+.controls{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:20px}
+.progress{height:7px;background:#292831;border-radius:10px;overflow:hidden;margin-top:10px}
 #bar{height:100%;width:0;background:linear-gradient(90deg,#a77a32,#f4d58c)}
+#notice{font-size:12px;color:#e6c77e;min-height:20px;margin:12px}
 </style>
 </head>
 <body>
 <header>
-<div class="crown">♛</div>
+<div style="font-size:36px;color:#e8c879">♛</div>
 <h1>OLIVER</h1>
 <div class="sub">THE EMPIRE</div>
 </header>
 
 <main class="panel">
-<div class="label">YOUR ROYAL TREASURY</div>
+<div class="label">ROYAL TREASURY</div>
 <div class="balance" id="money">0</div>
 <div class="label">GOLD COINS</div>
 
-<div style="margin:27px 0">
+<div class="coin-area" id="coinArea">
 <button class="coin" id="coin">👑</button>
-<div class="label" style="margin-top:14px">TAP TO BUILD YOUR EMPIRE</div>
 </div>
+<div class="label">TAP TO BUILD YOUR EMPIRE</div>
+<div class="combo" id="combo">READY TO RULE?</div>
 
 <div class="stats">
 <div class="stat"><span>LEVEL</span><b id="level">1</b></div>
@@ -61,35 +70,77 @@ button:disabled{opacity:.35;cursor:not-allowed}
 <div class="stat"><span>PER SECOND</span><b id="auto">0</b></div>
 </div>
 
-<div class="section-title">♛ ROYAL UPGRADES</div>
-
-<div class="item">
-<div><strong>⚔️ Stronger Touch</strong><small>Increase coins per tap</small></div>
-<button class="buy" id="powerBuy">50</button>
+<div class="section">♛ ROYAL UPGRADES</div>
+<div class="selector">
+<button class="action active" data-mode="1">x1</button>
+<button class="action" data-mode="10">x10</button>
+<button class="action" data-mode="max">MAX</button>
 </div>
 
 <div class="item">
-<div><strong>🏰 Royal Income</strong><small>Earn coins automatically</small></div>
-<button class="buy" id="autoBuy">100</button>
+<div class="itemtop">
+<div>
+<div class="itemname">⚔️ POWER TOUCH</div>
+<div class="itemdesc">Increase your coins per tap</div>
+</div>
+<div style="font-size:27px">⚔️</div>
+</div>
+<div class="iteminfo" id="powerInfo">POWER: 1</div>
+<div class="buyrow">
+<button class="buy" id="powerBuy">BUY 50</button>
+</div>
 </div>
 
 <div class="item">
-<div><strong>💎 Gold Multiplier</strong><small>Multiply your tap rewards</small></div>
-<button class="buy" id="multiBuy">500</button>
+<div class="itemtop">
+<div>
+<div class="itemname">🏰 ROYAL INCOME</div>
+<div class="itemdesc">Earn gold automatically</div>
+</div>
+<div style="font-size:27px">🏰</div>
+</div>
+<div class="iteminfo" id="autoInfo">INCOME: 0 / SEC</div>
+<div class="buyrow">
+<button class="buy" id="autoBuy">BUY 100</button>
+</div>
 </div>
 
-<div class="section-title">🎁 ROYAL REWARDS</div>
 <div class="item">
-<div><strong>🎁 Daily Reward</strong><small id="dailyText">Claim your daily treasure</small></div>
+<div class="itemtop">
+<div>
+<div class="itemname">💎 GOLD MULTIPLIER</div>
+<div class="itemdesc">Multiply every tap reward</div>
+</div>
+<div style="font-size:27px">💎</div>
+</div>
+<div class="iteminfo" id="multiInfo">MULTIPLIER: x1</div>
+<div class="buyrow">
+<button class="buy" id="multiBuy">BUY 500</button>
+</div>
+</div>
+
+<div class="section">🎁 ROYAL REWARDS</div>
+<div class="item">
+<div class="itemtop">
+<div>
+<div class="itemname">DAILY TREASURE</div>
+<div class="itemdesc" id="dailyText">Collect your daily gold</div>
+</div>
 <button class="buy" id="daily">CLAIM</button>
 </div>
-
-<div class="item">
-<div><strong>👑 Royal Prestige</strong><small>Reset your empire for permanent power</small></div>
-<button class="buy" id="prestige">LOCKED</button>
 </div>
 
-<div class="section-title">⚙️ GAME CONTROL</div>
+<div class="item">
+<div class="itemtop">
+<div>
+<div class="itemname">👑 ROYAL PRESTIGE</div>
+<div class="itemdesc">Reset your empire for permanent power</div>
+</div>
+<button class="buy" id="prestige">LOCKED</button>
+</div>
+</div>
+
+<div class="section">⚙️ CONTROL CENTER</div>
 <div class="controls">
 <button class="action" id="save">💾 SAVE</button>
 <button class="action" id="music">♫ MUSIC: OFF</button>
@@ -97,9 +148,8 @@ button:disabled{opacity:.35;cursor:not-allowed}
 </div>
 
 <div id="notice">Your empire awaits, King.</div>
-<div class="label" style="margin-top:15px">NEXT LEVEL</div>
+<div class="label">NEXT LEVEL</div>
 <div class="progress"><div id="bar"></div></div>
-<div class="footer">OLIVER EMPIRE © 2026 · YOUR KINGDOM, YOUR RULES</div>
 </main>
 
 <script>
@@ -110,148 +160,165 @@ powerCost:50,autoCost:100,multiCost:500,
 prestige:0,lastDaily:0,lastSave:Date.now(),
 sound:true,music:false
 };
-
 let game={...defaults};
+let mode=1,comboCount=0,lastTap=0;
 let audio=null,musicTimer=null,musicStep=0;
 
 function load(){
 try{
-const saved=JSON.parse(localStorage.getItem(KEY));
-if(saved)game={...defaults,...saved};
+let s=JSON.parse(localStorage.getItem(KEY));
+if(s)game={...defaults,...s};
 }catch(e){}
-const elapsed=Math.min(28800,Math.max(0,(Date.now()-(game.lastSave||Date.now()))/1000));
-if(elapsed>5 && game.auto>0){
+let elapsed=Math.min(28800,Math.max(0,(Date.now()-(game.lastSave||Date.now()))/1000));
 game.money+=Math.floor(elapsed*game.auto);
-}
 game.lastSave=Date.now();
 }
-
-function save(show=true){
+function save(show=false){
 game.lastSave=Date.now();
-try{
-localStorage.setItem(KEY,JSON.stringify(game));
-}catch(e){
-notice("Save unavailable. Check browser storage.");
-return;
+try{localStorage.setItem(KEY,JSON.stringify(game));}
+catch(e){notice("Save failed. Check browser storage.");return;}
+if(show)notice("✓ EMPIRE SAVED SUCCESSFULLY");
 }
-if(show)notice("✓ Your empire has been saved.");
-render();
-}
-
-function notice(message){
-document.getElementById("notice").textContent=message;
-}
-
-function fmt(n){
-return Math.floor(n).toLocaleString("en-US");
-}
-
-function clickSound(freq=500){
+function notice(t){document.getElementById("notice").textContent=t}
+function fmt(n){return Math.floor(n).toLocaleString("en-US")}
+function sound(freq=500){
 if(!game.sound)return;
 try{
 audio=audio||new(window.AudioContext||window.webkitAudioContext)();
-const osc=audio.createOscillator();
-const gain=audio.createGain();
-osc.frequency.value=freq;
-gain.gain.setValueAtTime(.07,audio.currentTime);
-gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.12);
-osc.connect(gain);gain.connect(audio.destination);
-osc.start();osc.stop(audio.currentTime+.13);
+if(audio.state==="suspended")audio.resume();
+let o=audio.createOscillator(),g=audio.createGain();
+o.frequency.value=freq;
+g.gain.setValueAtTime(.06,audio.currentTime);
+g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.13);
+o.connect(g);g.connect(audio.destination);
+o.start();o.stop(audio.currentTime+.14);
 }catch(e){}
 }
-
 function render(){
-document.getElementById("money").textContent=fmt(game.money);
+let m=document.getElementById("money");
+m.textContent=fmt(game.money);
 document.getElementById("level").textContent=game.level;
 document.getElementById("power").textContent=fmt(game.power*game.multi);
 document.getElementById("auto").textContent=fmt(game.auto);
-document.getElementById("powerBuy").textContent="BUY "+fmt(game.powerCost);
-document.getElementById("autoBuy").textContent="BUY "+fmt(game.autoCost);
-document.getElementById("multiBuy").textContent="BUY "+fmt(game.multiCost);
-
-document.getElementById("powerBuy").disabled=game.money<game.powerCost;
-document.getElementById("autoBuy").disabled=game.money<game.autoCost;
-document.getElementById("multiBuy").disabled=game.money<game.multiCost;
-
-let dailyReady=Date.now()-game.lastDaily>=86400000;
-document.getElementById("daily").disabled=!dailyReady;
-document.getElementById("daily").textContent=dailyReady?"CLAIM":"CLAIMED";
-document.getElementById("dailyText").textContent=dailyReady?"Your daily treasure awaits":"Come back tomorrow";
-
+document.getElementById("powerInfo").textContent="POWER: "+fmt(game.power*game.multi);
+document.getElementById("autoInfo").textContent="INCOME: "+fmt(game.auto)+" / SEC";
+document.getElementById("multiInfo").textContent="MULTIPLIER: x"+game.multi;
 document.getElementById("prestige").disabled=game.level<20;
 document.getElementById("prestige").textContent=game.level>=20?"PRESTIGE":"LEVEL 20";
-
-let progress=(game.money%1000)/1000*100;
-document.getElementById("bar").style.width=progress+"%";
+let ready=Date.now()-game.lastDaily>=86400000;
+document.getElementById("daily").disabled=!ready;
+document.getElementById("daily").textContent=ready?"CLAIM":"CLAIMED";
+document.getElementById("dailyText").textContent=ready?"Your treasure awaits":"Return tomorrow";
+let next=game.level*game.level*100;
+let previous=(game.level-1)*(game.level-1)*100;
+document.getElementById("bar").style.width=Math.min(100,Math.max(0,(game.money-previous)/(next-previous)*100))+"%";
 document.getElementById("music").textContent="♫ MUSIC: "+(game.music?"ON":"OFF");
 document.getElementById("sound").textContent="🔊 SOUND: "+(game.sound?"ON":"OFF");
+updateButtons();
 }
-
+function costFor(base,rate,count){
+let total=0,c=base;
+for(let i=0;i<count;i++){total+=c;c=Math.ceil(c*rate);if(total>game.money+1e15)break;}
+return total;
+}
+function affordable(base,rate){
+let n=0,total=0,c=base;
+while(n<1000&&total+c<=game.money){
+total+=c;n++;c=Math.ceil(c*rate);
+}
+return n;
+}
+function updateButtons(){
+let items=[
+["powerBuy",game.powerCost,1.65],
+["autoBuy",game.autoCost,1.8],
+["multiBuy",game.multiCost,2.5]
+];
+items.forEach(([id,c,r])=>{
+let n=mode==="max"?affordable(c,r):mode;
+let total=n?costFor(c,r,n):c;
+let b=document.getElementById(id);
+b.textContent=n?(mode==="max"?"MAX · "+fmt(total):"BUY x"+n+" · "+fmt(total)):"NEED "+fmt(c);
+b.disabled=n===0||game.money<total;
+});
+}
+function floatText(text){
+let el=document.createElement("div");
+el.className="float";
+el.textContent=text;
+el.style.left=(20+Math.random()*100)+"px";
+el.style.top=(20+Math.random()*80)+"px";
+document.getElementById("coinArea").appendChild(el);
+setTimeout(()=>el.remove(),900);
+}
 function tap(){
-game.money+=game.power*game.multi;
+let now=Date.now();
+comboCount=now-lastTap<1200?Math.min(comboCount+1,20):1;
+lastTap=now;
+let comboBonus=1+Math.floor(comboCount/5)*.1;
+let critical=Math.random()<.06;
+let amount=Math.floor(game.power*game.multi*comboBonus*(critical?5:1));
+game.money+=amount;
 game.level=Math.max(1,Math.floor(Math.sqrt(game.money/100))+1);
-clickSound(400+Math.random()*250);
+document.getElementById("combo").textContent=critical?"⚡ CRITICAL HIT x5!":comboCount>=5?"🔥 COMBO x"+comboBonus.toFixed(1):"KEEP TAPPING!";
+floatText("+"+fmt(amount)+(critical?" ⚡":""));
+let coin=document.getElementById("coin");
+coin.classList.remove("hit");void coin.offsetWidth;coin.classList.add("hit");
+sound(critical?950:450+Math.random()*250);
 render();
 }
-
 document.getElementById("coin").addEventListener("click",tap);
 
-document.getElementById("powerBuy").onclick=()=>{
-if(game.money<game.powerCost)return;
-game.money-=game.powerCost;
-game.power++;
-game.powerCost=Math.ceil(game.powerCost*1.65);
-clickSound(700);notice("⚔️ Your touch is stronger!");
-render();save(false);
-};
+function buy(type){
+let cfg={
+power:{cost:"powerCost",rate:1.65,field:"power",increase:1},
+auto:{cost:"autoCost",rate:1.8,field:"auto",increase:1},
+multi:{cost:"multiCost",rate:2.5,field:"multi",increase:1}
+}[type];
+let n=mode==="max"?affordable(game[cfg.cost],cfg.rate):mode;
+if(!n)return;
+let total=costFor(game[cfg.cost],cfg.rate,n);
+if(game.money<total)return;
+game.money-=total;
+for(let i=0;i<n;i++)game[cfg.cost]=Math.ceil(game[cfg.cost]*cfg.rate);
+game[cfg.field]+=cfg.increase*n;
+sound(850);
+notice("✓ "+type.toUpperCase()+" UPGRADED x"+n);
+floatText("UPGRADE!");
+render();save();
+}
+document.getElementById("powerBuy").onclick=()=>buy("power");
+document.getElementById("autoBuy").onclick=()=>buy("auto");
+document.getElementById("multiBuy").onclick=()=>buy("multi");
 
-document.getElementById("autoBuy").onclick=()=>{
-if(game.money<game.autoCost)return;
-game.money-=game.autoCost;
-game.auto++;
-game.autoCost=Math.ceil(game.autoCost*1.8);
-clickSound(700);notice("🏰 Your royal income increased!");
-render();save(false);
+document.querySelectorAll("[data-mode]").forEach(b=>{
+b.onclick=()=>{
+mode=b.dataset.mode==="max"?"max":Number(b.dataset.mode);
+document.querySelectorAll("[data-mode]").forEach(x=>x.classList.remove("active"));
+b.classList.add("active");
+render();sound(650);
 };
-
-document.getElementById("multiBuy").onclick=()=>{
-if(game.money<game.multiCost)return;
-game.money-=game.multiCost;
-game.multi++;
-game.multiCost=Math.ceil(game.multiCost*2.5);
-clickSound(800);notice("💎 Your gold multiplier increased!");
-render();save(false);
-};
-
+});
 document.getElementById("daily").onclick=()=>{
 if(Date.now()-game.lastDaily<86400000)return;
 let reward=500+game.level*100;
-game.money+=reward;
-game.lastDaily=Date.now();
-clickSound(900);
-notice("🎁 Daily reward: +"+fmt(reward)+" gold!");
-render();save(false);
+game.money+=reward;game.lastDaily=Date.now();
+notice("🎁 DAILY REWARD +"+fmt(reward));
+sound(950);render();save();
 };
-
 document.getElementById("prestige").onclick=()=>{
 if(game.level<20)return;
-if(!confirm("Reset your coins and upgrades for permanent prestige power?"))return;
+if(!confirm("Reset your empire for permanent prestige power?"))return;
 game.prestige++;
-game.money=0;
-game.power=1+game.prestige;
-game.auto=0;
-game.multi=1+game.prestige;
-game.level=1;
+game.money=0;game.power=1+game.prestige;
+game.auto=0;game.multi=1+game.prestige;game.level=1;
 game.powerCost=50;game.autoCost=100;game.multiCost=500;
-notice("👑 Your empire has entered a new era!");
-render();save(false);
+notice("👑 NEW ROYAL ERA!");
+render();save();
 };
-
 document.getElementById("save").onclick=()=>save(true);
-
 document.getElementById("sound").onclick=()=>{
-game.sound=!game.sound;
-render();save(false);
+game.sound=!game.sound;render();save();
 };
 
 const melody=[261.63,329.63,392,329.63,293.66,349.23,440,392];
@@ -260,32 +327,24 @@ if(!game.music)return;
 try{
 audio=audio||new(window.AudioContext||window.webkitAudioContext)();
 if(audio.state==="suspended")audio.resume();
-let osc=audio.createOscillator();
-let gain=audio.createGain();
-osc.type="sine";
-osc.frequency.value=melody[musicStep++%melody.length];
-gain.gain.setValueAtTime(.025,audio.currentTime);
-gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.55);
-osc.connect(gain);gain.connect(audio.destination);
-osc.start();osc.stop(audio.currentTime+.56);
+let o=audio.createOscillator(),g=audio.createGain();
+o.type="sine";o.frequency.value=melody[musicStep++%melody.length];
+g.gain.setValueAtTime(.02,audio.currentTime);
+g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.55);
+o.connect(g);g.connect(audio.destination);
+o.start();o.stop(audio.currentTime+.56);
 }catch(e){}
 }
-
-function stopMusic(){
-if(musicTimer){clearInterval(musicTimer);musicTimer=null;}
-}
-
+function stopMusic(){if(musicTimer){clearInterval(musicTimer);musicTimer=null;}}
 document.getElementById("music").onclick=()=>{
 game.music=!game.music;
 if(game.music){
 try{
 audio=audio||new(window.AudioContext||window.webkitAudioContext)();
-audio.resume();
-playNote();
-musicTimer=setInterval(playNote,650);
-}catch(e){game.music=false;notice("Music is not supported by this browser.");}
+audio.resume();playNote();musicTimer=setInterval(playNote,650);
+}catch(e){game.music=false;}
 }else stopMusic();
-render();save(false);
+render();save();
 };
 
 setInterval(()=>{
@@ -295,12 +354,9 @@ game.level=Math.max(1,Math.floor(Math.sqrt(game.money/100))+1);
 render();
 }
 },1000);
-
-setInterval(()=>save(false),10000);
-document.addEventListener("visibilitychange",()=>{
-if(document.hidden)save(false);
-});
-window.addEventListener("pagehide",()=>save(false));
+setInterval(()=>save(),10000);
+document.addEventListener("visibilitychange",()=>{if(document.hidden)save();});
+window.addEventListener("pagehide",()=>save());
 
 load();
 render();
